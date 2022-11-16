@@ -10,18 +10,22 @@
 
 
 <%
+	// 1. 요청 분석
+	
+	// 에러메세지 loginMsg
+	String loginMsg = URLEncoder.encode("아이디와 비밀번호가 올바르지 않습니다.", "UTF-8"); 
+
+
 	if(request.getParameter("memberId") == null || request.getParameter("memberPw") == null 
 		|| request.getParameter("memberId").equals("") || request.getParameter("memberPw").equals("")) {
 		
 		// 아이디와 패스워드가 공백 or null 이면 loginForm.jsp redirect
-		response.sendRedirect(request.getContextPath() + "/loginForm.jsp");
+		response.sendRedirect(request.getContextPath() + "/loginForm.jsp?loginMsg=" + loginMsg);
 		return;
 	}
 
 
-
-	// 1. 요청 분석
-	
+	// Member 객체 생성 및 저장
 	Member member = new Member();
 	member.memberId = request.getParameter("memberId");
 	member.memberPw = request.getParameter("memberPw");
@@ -55,7 +59,8 @@
 	ResultSet rs = stmt.executeQuery();
 	
 	
-	String targetPage = "/loginForm.jsp";
+	String targetPage = "/loginForm.jsp?loginMsg=" + loginMsg;
+	
 	if(rs.next()) {
 		
 		//로그인 성공

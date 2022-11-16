@@ -25,7 +25,7 @@
 			<div>
 				<span><%=(String) (session.getAttribute("loginMemberId")) %> 님 반갑습니다.</span>
 				<a href = "<%=request.getContextPath() %>/memberOne.jsp">내 정보</a>
-				<a href = "<%=request.getContextPath() %>/logout.jsp">로그아웃</a>
+				<a href = "<%=request.getContextPath() %>/logoutAction.jsp">로그아웃</a>
 			</div>
 		
 			<div>
