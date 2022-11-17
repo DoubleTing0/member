@@ -17,19 +17,40 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>회원</title>
+		
+		<!-- Bootstrap5를 참조한다 시작-->
+		
+		<!-- Latest compiled and minified CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Bootstrap5를 참조한다 끝-->
+		
 	</head>
 	
 	<body>
-		<div>
-			<div>
-				<span><%=(String) (session.getAttribute("loginMemberId")) %> 님 반갑습니다.</span>
-				<a href = "<%=request.getContextPath() %>/memberOne.jsp">내 정보</a>
-				<a href = "<%=request.getContextPath() %>/logoutAction.jsp">로그아웃</a>
+		<div class = "container">
+			<div class = "text-center">
+				<h1>회원</h1>
 			</div>
 		
-			<div>
-				<h1>멤버 페이지 입니다.</h1>
+			
+			<div class = "text-end">
+				
+				<button type="button" class = "btn btn-outline-primary rounded-5" 
+								onclick="location.href='<%=request.getContextPath() %>/memberOne.jsp' ">내 정보</button>
+				<button type="button" class = "btn btn-outline-primary rounded-5" 
+								onclick="location.href='<%=request.getContextPath() %>/logoutAction.jsp' ">로그아웃</button>
+				
+			</div>
+		
+			<div>&nbsp;</div>
+			
+			<div class = "text-center">
+				<h3><%=(String) (session.getAttribute("loginMemberId")) %> 님 반갑습니다.</h3>
 			</div>
 		
 		</div>

@@ -75,40 +75,59 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>내 정보</title>
+		
+		<!-- Bootstrap5를 참조한다 시작-->
+		
+		<!-- Latest compiled and minified CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Bootstrap5를 참조한다 끝-->
+		
 	</head>
 	
 	<body>
-		<div>
-			<h1>내 정보</h1>
+		<div class = "container">
+			<div class = "text-center">
+				<h1>내 정보</h1>
+			</div>
 			
 			<!-- 비밀번호를 제외한 모든 정보(컬럼) 출력 -->
 			
-			
-			<div>
+			<div class = "text-end">
 				<!-- 수정 전 비밀번호와 새로운 비밀번호 입력 받아야함  -->
-				<a href = "<%=request.getContextPath()%>/updateMemberPwForm.jsp">비밀번호 수정</a>
+				<button type="button" class = "btn btn-outline-primary rounded-5" 
+								onclick="location.href='<%=request.getContextPath() %>/updateMemberPwForm.jsp' ">비밀번호 수정</button>
 				<!-- updateMemberPwAction.jsp 처리 -->
-			</div>
-			<div>
-				<a href = "<%=request.getContextPath()%>/updateMemberForm.jsp">개인정보 수정</a>
+			
+				<button type="button" class = "btn btn-outline-primary rounded-5" 
+								onclick="location.href='<%=request.getContextPath() %>/updateMemberForm.jsp' ">개인정보 수정</button>
 				<!-- updateMemberAction.jsp 처리 / 비밀번호 수정은 불가능 -->
-			</div>
-			<div>
+			
 				<!-- 아이디 비밀번호 검증 -->
-				<a href = "<%=request.getContextPath()%>/deleteMemberForm.jsp">회원 탈퇴</a>
+				<button type="button" class = "btn btn-outline-primary rounded-5" 
+								onclick="location.href='<%=request.getContextPath() %>/deleteMemberForm.jsp' ">회원 탈퇴</button>
 				<!-- deleteMemberAction.jsp 처리 / 비밀번호 확인 후 삭제 -->
 				<!-- 탈퇴 후 session.invaildate() -->
 			</div>	
-				
-			<div>
-				<table>
+			
+			
+			
+			
+			
+			
+			<div class = "row justify-content-center">
+				<table class = "table table-borderless w-auto text-center">
 					<tr>
 						<th>아이디</th>
-						<th>이름</th>
+						<td><%=member.memberId %></td>
+						
 					</tr>
 					
 					<tr>
-						<td><%=member.memberId %></td>
+						<th>이름</th>
 						<td><%=member.memberName %></td>
 					</tr>
 						

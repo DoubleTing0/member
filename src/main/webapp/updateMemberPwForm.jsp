@@ -36,18 +36,31 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>비밀번호 변경</title>
+		
+		<!-- Bootstrap5를 참조한다 시작-->
+		
+		<!-- Latest compiled and minified CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Bootstrap5를 참조한다 끝-->
+		
 	</head>
 	
 	<body>
-		<div>
+		<div class = "container">
 		
-			<div>
+			<div class = "text-center">
 				<h1>비밀번호 변경</h1>
 			</div>
 			
+			<div>&nbsp;</div>
+			
 			
 			<!-- 오류 메세지 출력 -->
-			<div>
+			<div class = "text-danger text-center">
 				<%
 					if(updatePwMsg != null) {
 				%>
@@ -64,8 +77,8 @@
 			
 			<div>
 				<form action = "<%=request.getContextPath() %>/updateMemberPwAction.jsp" method = "post">
-					<div>
-						<table border = "1">
+					<div class = "row justify-content-center">
+						<table class = "table table-borderless w-auto text-center">
 							<tr>
 								<td>현재 비밀번호</td>
 								<td>
@@ -83,52 +96,16 @@
 						</table>
 					</div>
 					
-					<div>
-						<button type = "submit">변경</button>
+					<div class = "text-center">
+						<button type = "submit" class = "btn btn-outline-primary rounded-5">변경</button>
 					</div>
 						
-						
-					
-					
-					
 					
 				</form>
 			</div>
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 	</body>

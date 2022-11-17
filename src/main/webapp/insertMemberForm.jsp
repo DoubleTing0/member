@@ -20,42 +20,53 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>회원 가입</title>
+		
+		<!-- Bootstrap5를 참조한다 시작-->
+		
+		<!-- Latest compiled and minified CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<!-- Bootstrap5를 참조한다 끝-->
+		
+		
 	</head>
 	
 	<body>
-		<div>
+		<div class = "container">
 		
-			<div>
+			<div class = "text-center">
 				<h1>회원가입</h1>
 			</div>
 		
-		
-			<!-- 모든 항목 입력하지 않았을 때 => insertMsg != null -->
-			<%
-				if(insertMsg != null) {
-			%>
-					<div style = "color : red;">
-						<span><%=insertMsg %></span>
-					</div>
-			<%
-				}
-			%>
+			<div>&nbsp;</div>
 			
-			<!-- 아이디가 중복 되었을 때 => idMsg != null -->
-			<%
-				if(idMsg != null) {
-			%>
-					<div style = "color : red;">
+			<div class = "text-danger text-center">
+				<!-- 모든 항목 입력하지 않았을 때 => insertMsg != null -->
+				<%
+					if(insertMsg != null) {
+				%>
+						<span><%=insertMsg %></span>
+				<%
+					}
+				%>
+				
+				<!-- 아이디가 중복 되었을 때 => idMsg != null -->
+				<%
+					if(idMsg != null) {
+				%>
 						<span><%=idMsg %></span>
-					</div>
-			<%
-				}
-			%>
+				<%
+					}
+				%>
+			</div>
 		
 			<div>
 				<form action = "<%=request.getContextPath()%>/insertMemberAction.jsp" method = "post">
-					<div>
-						<table>
+					<div class = "row justify-content-center">
+						<table class = "table table-borderless w-auto text-center">
 							<tr>
 								<td>
 									<label for = "memberId">회원 아이디</label>
@@ -86,8 +97,8 @@
 						
 					</div>
 				
-					<div>
-						<button type = "submit">완료</button>
+					<div class = "text-center">
+						<button type = "submit" class = "btn btn-outline-primary rounded-5">완료</button>
 					</div>
 				
 				</form>

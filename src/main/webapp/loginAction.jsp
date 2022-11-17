@@ -75,11 +75,6 @@
 		stmt.close();
 		conn.close();
 		response.sendRedirect(request.getContextPath() + targetPage);
-		
-	
-	
-	
-	
 
 
 %>

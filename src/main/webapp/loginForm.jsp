@@ -37,14 +37,15 @@
 	</head>
 	
 	<body>
-		<div>
-			<div>
+		<div class = "container">
+			<div class = "text-center">
 				<h1>로그인</h1>
 			</div>
 			
+			<div>&nbsp;</div>
 			
 			<!-- 오류 메세지 출력 -->
-			<div>
+			<div class = "text-danger text-center">
 				<%
 					if(loginMsg != null) {
 				%>
@@ -58,8 +59,8 @@
 			
 			<div>
 				<form action = "<%=request.getContextPath() %>/loginAction.jsp" method = "post">
-					<div>
-						<table border = "1">
+					<div class = "row justify-content-center">
+						<table class = "table table-borderless w-auto text-center">
 							<tr>
 								<td>
 									<label for = "memberId">회원 아이디</label>
@@ -85,8 +86,13 @@
 					
 					<div>&nbsp;</div>
 				
-					<div>
-						<button type = "submit" class = "btn btn-outline-info rounded-5">로그인</button>
+					<div class = "text-center">
+						<button type = "submit" class = "btn btn-outline-primary rounded-5">로그인</button>
+						
+						<button type="button" class = "btn btn-outline-primary rounded-5" 
+								onclick="location.href='<%=request.getContextPath() %>/insertMemberForm.jsp' ">회원가입</button>
+						<!-- insertMemberForm.jsp, insertMemberAction.jsp redirect loginForm.jsp -->
+						
 					</div>
 				
 				
@@ -95,13 +101,8 @@
 			</div>
 			
 			
-			<div>&nbsp;</div>
-									
-			<div>
-				<a href = "<%=request.getContextPath() %>/insertMemberForm.jsp">회원가입</a>
-			</div>
 		
-			<!-- insertMemberForm.jsp, insertMemberAction.jsp redirect loginForm.jsp -->
+			
 			
 			
 			
